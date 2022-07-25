@@ -5,7 +5,7 @@
 > The application will allow users to book rockets and join selected space missions.
 
 ## Built With
-> React
+> React, Redux and CSS for styling
 
 ## Live Demo (Coming soon)
 
