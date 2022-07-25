@@ -11,6 +11,8 @@ const Missions = () => (
         <th>-</th>
       </tr>
       <MissionItem />
+      <MissionItem />
+      <MissionItem />
 
     </table>
   </div>

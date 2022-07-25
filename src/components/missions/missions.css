@@ -21,6 +21,14 @@
 }
 
 @media (max-width: 786px){
+  .missions {
+    padding: 50px 0;
+  }
+  .missions-table {
+    display: flex;
+    gap:  100px;
+    flex-direction: column;
+  }
   th {
     width: 0;
     position: absolute;
@@ -51,8 +59,8 @@
   }
 
   .join-mission-button {
-    position: absolute;
-    top:  0;
+    position: absolute  ;
+    top:  10px;
     width: 100%;
   }
 }
