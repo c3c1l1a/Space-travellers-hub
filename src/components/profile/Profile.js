@@ -15,7 +15,6 @@ const Profile = () => (
       <ul className="rocket-items">
         <li>Rocket 1</li>
         <li>Rocket 2</li>
-        <li>Rocket 3</li>
       </ul>
     </div>
   </div>
