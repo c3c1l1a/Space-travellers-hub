@@ -20,7 +20,7 @@ This project is open source and you are free take modify and do with as you wish
 - Knowledge of React, HTML and CSS.
 
 ### Download 🎰
--  Click the this [link](https://github.com/c3c1l1a/React-Capstone-Project.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/React-Capstone-Project/archive/refs/heads/dev.zip)
+-  Click this [link](https://github.com/c3c1l1a/React-Capstone-Project.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/React-Capstone-Project/archive/refs/heads/dev.zip)
 
 
 # Getting Started with Create React App
@@ -103,7 +103,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Contributers
-	**Cecilia Mukima**
+**Cecilia Mukima**
 
 - GitHub: [@c3c1l1a](https://github.com/c3c1l1a/)
 - Twitter: [@cMukima](https://twitter.com/CMukima)
