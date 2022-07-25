@@ -1,3 +1,28 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+# Project Name : Space Travelers' Hub
+> This project consume real live data from the SpaceX API and provides a way for people to book commercial and scientific space travel services. 
+> The application will allow users to book rockets and join selected space missions.
+
+## Built With
+> React
+
+## Live Demo (Coming soon)
+
+## Getting Started
+
+This project is open source and you are free take modify and do with as you wish. To get a local copy up and running follow these simple example steps.
+
+### Prerequisites ♻️
+- Any modern browser.
+- A local version control like git installed on your computer
+- Code editor (Visual studio code, sublime text, notepad++, ...) installed on your computer;
+- Knowledge of React, HTML and CSS.
+
+### Download 🎰
+-  Click the this [link](https://github.com/c3c1l1a/React-Capstone-Project.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/React-Capstone-Project/archive/refs/heads/dev.zip)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,6 +64,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+### Run code linters 🧪
+> Run the commands below in the terminal or `git bash`.
+- `npx hint .` : for the `html` codebase and use of best practices.
+- `npx stylelint "**/*.{css,scss}"` :  for the `css` codebase and use of best practices. you can add 
+- `npx eslint .` :  for the `JavaScript` codebase and use of best practices.
+-  > Note that you can add `--fix` keyword to the command for `Css` and/or `JavaScript` to make sure that you avoid all errors comming from your `code editor`
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
@@ -68,3 +101,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Contributers
+	**Cecilia Mukima**
+
+- GitHub: [@c3c1l1a](https://github.com/c3c1l1a/)
+- Twitter: [@cMukima](https://twitter.com/CMukima)
+- LinkedIn: [cecilia-wangui-mukima](https://linkedin.com/in/linkedinhandle)
+- Profile [c3cl1ia.github.io](https://c3c1l1a.github.io)
+
+**Bruk Teshome**
+
+- GitHub: [@githubhandle](https://github.com/bruk19)
+- Twitter: [@twitterhandle](https://twitter.com/Bruktesh)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bruk-teshome-ab4325226)
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Microverse
+- IHat tip to anyone whose code was used for inspiration
+
+## 📝 License
+
+This project is [MIT](https://spdx.org/licenses/MIT.html) licensed.
