@@ -1,0 +1,27 @@
+.profile {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.profile h2 {
+	font-size: 30px;
+}
+
+.missions, .rockets {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.mission-items li, .rocket-items li {
+	list-style: none;
+	border:  solid lightgray 1px;
+	border-bottom: none;
+	padding:  10px;
+}
+
+.mission-items li:last-child, .rocket-items li:last-child {
+	border-bottom: solid 1px lightgray;
+}
