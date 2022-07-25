@@ -1,4 +1,5 @@
 import Profile from './components/profile/Profile';
+import Missions from './components/missions/Missions';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         header
       </header>
       <Profile />
+      <Missions />
     </div>
   );
 }
