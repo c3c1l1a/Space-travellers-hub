@@ -1,5 +1,5 @@
 .missionsPage {
-  padding: 10px 7%;
+  padding: 10px 10%;
 }
 
 th {
@@ -17,6 +17,33 @@ th {
   font-weight: bold;
 }
 
+
+
+.description {
+  width: 70%;
+}
+
+.not-member {
+  width: 10%;
+  text-transform: uppercase;
+  background: darkgray;
+  color:  white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.member {
+  background: darkturquoise;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.mission {
+  width: 10%;
+}
+
+
 .join-mission-button {
   background: none;
   padding: 10px 20px;
@@ -26,8 +53,12 @@ th {
 }
 
 @media (max-width: 786px) {
+  .mission-page {
+    padding:  0;
+  }
+
   .missions {
-    padding: 50px 0;
+    padding: 0px 0;
   }
 
   tbody {
@@ -43,6 +74,8 @@ th {
     overflow: hidden;
   }
 
+
+
   td {
     position: relative;
     display: flex;
@@ -50,9 +83,22 @@ th {
     border: solid 1px lightgray;
     border-collapse: collapse;
     border-bottom: none;
-    padding: 10px 0;
+    padding: 10px;
     border-left: none;
     border-right: none;
+    width:  100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .mission {
+    width: 100%;
+  }
+
+  .status {
+    width: 100%;
   }
 
   td p {
