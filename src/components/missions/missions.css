@@ -1,16 +1,19 @@
-/*
-.missions-table {
-  border:  solid red 1px;
+.missionsPage {
+  padding:  10px 7%;
+}
+th {
+  font-weight: bold;
 }
 
-.missions-table-head {
-  flex-direction: column;
+.mission-item td:first-child {
+  font-weight: bold;
 }
 
-.mission-item {
-  border: solid blue 1px;
+td, th {
+  text-align: left;
+  padding: 10px;
+  border:  solid 1px lightgray;
 }
-*/
 
 .join-mission-button {
   background: none;
@@ -28,8 +31,9 @@
     display: flex;
     gap:  100px;
     flex-direction: column;
+    padding: 100px 0;
   }
-  th {
+  .missions-table-head {
     width: 0;
     position: absolute;
     overflow: hidden;

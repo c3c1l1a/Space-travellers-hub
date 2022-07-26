@@ -2,7 +2,7 @@ import MissionItem from './MissionItem';
 import './missions.css';
 
 const Missions = () => (
-  <div className="missions">
+  <div className="missionsPage">
     <table className="missions-table">
       <tr className="missions-table-head">
         <th>Mission</th>
