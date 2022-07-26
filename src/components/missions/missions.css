@@ -1,18 +1,20 @@
 .missionsPage {
-  padding:  10px 7%;
+  padding: 10px 7%;
 }
+
 th {
   font-weight: bold;
 }
 
-.mission-item td:first-child {
-  font-weight: bold;
-}
-
-td, th {
+td,
+th {
   text-align: left;
   padding: 10px;
-  border:  solid 1px lightgray;
+  border: solid 1px lightgray;
+}
+
+.mission-item td:first-child {
+  font-weight: bold;
 }
 
 .join-mission-button {
@@ -23,21 +25,24 @@ td, th {
   border-radius: 3px;
 }
 
-@media (max-width: 786px){
+@media (max-width: 786px) {
   .missions {
     padding: 50px 0;
   }
+
   .missions-table {
     display: flex;
-    gap:  100px;
+    gap: 100px;
     flex-direction: column;
     padding: 100px 0;
   }
+
   .missions-table-head {
     width: 0;
     position: absolute;
     overflow: hidden;
   }
+
   td {
     position: relative;
     display: flex;
@@ -49,9 +54,11 @@ td, th {
     border-left: none;
     border-right: none;
   }
+
   td p {
     width: 65vw;
   }
+
   td::before {
     content: attr(data-label);
     float: left;
@@ -59,12 +66,12 @@ td, th {
     width: 23vw;
     font-weight: bold;
     border-right: solid 1px lightgray;
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   .join-mission-button {
-    position: absolute  ;
-    top:  10px;
+    position: absolute;
+    top: 10px;
     width: 100%;
   }
 }
