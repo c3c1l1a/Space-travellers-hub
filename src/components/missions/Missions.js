@@ -15,15 +15,19 @@ const Missions = ({ missions }) => {
   return (
     <div className="missionsPage">
       <table className="missions-table">
-        <tr className="missions-table-head">
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>-</th>
-        </tr>
-        {missions.map((mission) => (
-          <MissionItem key={mission.mission_id} mission={mission} />
-        ))}
+        <thead>
+          <tr className="missions-table-head">
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>-</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <MissionItem key={mission.mission_id} mission={mission} />
+          ))}
+        </tbody>
       </table>
     </div>
   );
