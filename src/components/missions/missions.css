@@ -30,7 +30,7 @@ th {
     padding: 50px 0;
   }
 
-  .missions-table {
+  tbody {
     display: flex;
     gap: 100px;
     flex-direction: column;
