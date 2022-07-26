@@ -1,20 +1,30 @@
-const MissionsItem = () => (
-  <tr className="mission-item">
-    <td data-label="Mission">Thaicom</td>
-    <td data-label="Description">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum
-      </p>
-    </td>
-    <td data-label="Status"><span>Not a member</span></td>
-    <td data-label=""><button type="submit" className="join-mission-button">Join mission</button></td>
-  </tr>
-);
+import PropTypes from 'prop-types';
+
+const MissionsItem = (props) => {
+  const { mission } = props;
+
+  return (
+    <tr className="mission-item">
+      <td data-label="Mission">{mission.mission_name}</td>
+      <td data-label="Description">
+        <p>
+          {mission.description}
+        </p>
+      </td>
+      <td data-label="Status"><span>Not a member</span></td>
+      <td data-label=""><button type="submit" className="join-mission-button">Join mission</button></td>
+    </tr>
+  );
+};
+
+MissionsItem.defaultProps = {
+  mission: {},
+};
+
+MissionsItem.propTypes = {
+  mission: PropTypes.objectOf(PropTypes.oneOfType(
+    [PropTypes.string, PropTypes.number, PropTypes.array],
+  )),
+};
 
 export default MissionsItem;

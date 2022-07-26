@@ -9,8 +9,12 @@ export default function missionsReducer(state = [], action) {
     case FETCH_ALL:
       return state;
     case FULFIL_FETCH_ALL: {
-      console.log(action.payload);
-      return state;
+      const stateItems = action.payload.map((item) => ({
+        mission_id: item.mission_id,
+        mission_name: item.mission_name,
+        description: item.description,
+      }));
+      return stateItems;
     }
     default:
       return state;

@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import MissionItem from './MissionItem';
 import { fetchAllMissions } from '../../redux/missions/missions';
 import './missions.css';
 
-const Missions = () => {
+const Missions = ({ missions }) => {
   const dispatch = useDispatch();
 
   useEffect(() => async () => {
@@ -20,12 +21,21 @@ const Missions = () => {
           <th>Status</th>
           <th>-</th>
         </tr>
-        <MissionItem />
-        <MissionItem />
-        <MissionItem />
-
+        {missions.map((mission) => (
+          <MissionItem key={mission.mission_id} mission={mission} />
+        ))}
       </table>
     </div>
   );
+};
+
+Missions.defaultProps = {
+  missions: [],
+};
+
+Missions.propTypes = {
+  missions: PropTypes.arrayOf(PropTypes.oneOfType(
+    [PropTypes.object],
+  )),
 };
 export default Missions;
