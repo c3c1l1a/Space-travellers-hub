@@ -3,6 +3,7 @@ import http from '../../services/missionsAPI';
 
 const FETCH_ALL = 'missions/FETCH_ALL';
 const FULFIL_FETCH_ALL = 'mission/FETCH_ALL/fulfilled';
+const RESERVE = 'mission/RESERVE';
 
 export default function missionsReducer(state = [], action) {
   switch (action.type) {
@@ -13,8 +14,20 @@ export default function missionsReducer(state = [], action) {
         mission_id: item.mission_id,
         mission_name: item.mission_name,
         description: item.description,
+        reserved: 'false',
       }));
       return stateItems;
+    }
+    case RESERVE: {
+      const newState = state.map((item) => {
+        if (item.mission_id === action.missionId) {
+          const reservedCondition = item.reserved === 'true' ? 'false' : 'true';
+          const newItem = { ...item, reserved: reservedCondition };
+          return newItem;
+        }
+        return item;
+      });
+      return newState;
     }
     default:
       return state;
@@ -31,3 +44,10 @@ export const fetchAllMissions = createAsyncThunk(
     });
   },
 );
+
+export function updateReservedState(missionId) {
+  return {
+    type: RESERVE,
+    missionId,
+  };
+}
