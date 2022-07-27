@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import logo from '../../assets/logo.png';
 
 const Nav = () => {
     const [openMenu, setOpenMenu] = useState(false);
