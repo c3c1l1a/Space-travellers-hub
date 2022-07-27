@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        header
+        <Nav />
       </header>
       <Profile />
       <Missions missions={state.missions} />
