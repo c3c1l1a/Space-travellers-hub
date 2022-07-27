@@ -1,4 +1,4 @@
-import SpacesxService from '../../services/SpacexService';
+import SpacesxService from '../../services/SpaceService';
 
 const ADD_ALL_ROCKETS = 'spacehub/rockets/ADD_ALL_ROCKETS';
 const TOGGLE_RESERVATION = 'spacehub/rockets/TOGGLE_RESERVATION';
