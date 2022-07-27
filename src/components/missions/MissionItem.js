@@ -5,8 +5,10 @@ import { updateReservedState } from '../../redux/missions/missions';
 const MissionsItem = (props) => {
   const dispatch = useDispatch();
   const { mission } = props;
-  const statusStyle = mission.reserved ? 'member' : 'not-member';
-  const statusText = mission.reserved ? 'Active Member' : 'Not A Member';
+  const statusStyle = mission.reserved === 'true' ? 'member' : 'not-member';
+  const statusText = mission.reserved === 'true' ? 'Active Member' : 'Not A Member';
+  const buttonText = mission.reserved === 'true' ? 'Leave mission' : 'Join Mission';
+  const buttonStyle = mission.reserved === 'true' ? 'leave' : 'join';
   const onClick = (e) => {
     e.preventDefault();
     dispatch(updateReservedState(mission.mission_id));
@@ -21,7 +23,7 @@ const MissionsItem = (props) => {
         </p>
       </td>
       <td data-label="Status" className="status"><span className={statusStyle}>{statusText}</span></td>
-      <td data-label=""><button type="submit" className="join-mission-button" onClick={onClick}>Join mission</button></td>
+      <td data-label=""><button type="submit" className={buttonStyle} onClick={onClick}>{buttonText}</button></td>
     </tr>
   );
 };

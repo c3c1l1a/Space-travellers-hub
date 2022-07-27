@@ -18,7 +18,7 @@ th {
 }
 
 .description {
-  width: 70%;
+  width: 50%;
 }
 
 .not-member {
@@ -38,15 +38,23 @@ th {
 }
 
 .mission {
-  width: 10%;
+  width: 15%;
 }
 
-.join-mission-button {
-  background: none;
+.join, .leave {
+  background: white;
   padding: 10px 20px;
   outline: none;
-  border: solid 1px black;
   border-radius: 3px;
+}
+
+.join {
+  border: solid 1px black;
+  color: black;
+}
+.leave {
+  border: solid 1px red;
+  color:  red;
 }
 
 @media (max-width: 786px) {
