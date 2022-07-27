@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Nav from './components/navigation/Nav';
 import Profile from './components/profile/Profile';
 import Missions from './components/missions/Missions';
@@ -15,9 +15,12 @@ function App() {
       <header className="App-header">
         <Nav />
       </header>
-      <Route path="/rockets" element={<Rockets />} />
-      <Profile />
-      <Missions missions={state.missions} />
+      <Routes>
+        <Route path="/rockets" element={<Rockets />} />
+        <Route path="/missions" element={<Missions missions={state.missions} />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+
     </div>
   );
 }
