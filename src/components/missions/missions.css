@@ -41,7 +41,8 @@ th {
   width: 15%;
 }
 
-.join, .leave {
+.join,
+.leave {
   background: white;
   padding: 10px 20px;
   outline: none;
@@ -52,9 +53,10 @@ th {
   border: solid 1px black;
   color: black;
 }
+
 .leave {
   border: solid 1px red;
-  color:  red;
+  color: red;
 }
 
 @media (max-width: 786px) {
