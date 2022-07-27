@@ -1,6 +1,7 @@
 import SpacesxService from '../../services/SpacexService';
 
 const ADD_ALL_ROCKETS = 'spacehub/rockets/ADD_ALL_ROCKETS';
+const TOGGLE_RESERVATION = 'spacehub/rockets/TOGGLE_RESERVATION';
 
 export default function rockets(state = [], action = {}) {
   switch (action.type) {
