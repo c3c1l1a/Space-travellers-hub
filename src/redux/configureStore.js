@@ -5,12 +5,12 @@ import rockets from './rockets/rockets';
 
 const rootReducer = combineReducers({
   missions: missionsReducer,
+  rockets,
 
 });
 
 const store = configureStore({
   reducer: rootReducer,
-  rockets,
 });
 
 export default store;
