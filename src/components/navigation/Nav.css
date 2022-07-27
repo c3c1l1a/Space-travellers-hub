@@ -1,0 +1,16 @@
+.navBar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
