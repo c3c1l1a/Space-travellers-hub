@@ -21,10 +21,14 @@ export const getRockets = async (dispatch, getState) => {
   if (currRockets.length === 0) {
     const { data } = await SpacesxService.getRockets();
     const rockets = data.map((rocket) => ({
+      id: rocket.id,
       name: rocket.rocket_name,
       description: rocket.description,
       flickr_images: rocket.flickr_images[0],
+      reserved: false,
     }));
     dispatch({ type: ADD_ALL_ROCKETS, payload: rockets });
   }
 };
+
+export const reserveRocket = (id) => ({ type: TOGGLE_RESERVATION, payload: id });
