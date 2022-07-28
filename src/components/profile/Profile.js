@@ -1,4 +1,5 @@
 import './profile.css';
+import ReservedRockets from './ReservedRockets/ReservedRockets';
 
 const Profile = () => (
   <div className="profile">
@@ -17,6 +18,7 @@ const Profile = () => (
         <li>Rocket 2</li>
       </ul>
     </div>
+    <ReservedRockets />
   </div>
 );
 

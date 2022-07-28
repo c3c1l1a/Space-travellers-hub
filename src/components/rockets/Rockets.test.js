@@ -1,6 +1,6 @@
 import {
-    render, screen, waitFor, fireEvent, act,
-  } from '@testing-library/react';
+  render, screen, waitFor, fireEvent, act,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import Rockets from './Rockets';
 import Profile from '../profile/Profile';
@@ -55,52 +55,57 @@ describe('Rockets Component', () => {
     await waitFor(() => {
       expect(screen.getAllByText('Reserve Rocket').length).toBeGreaterThan(0);
     });
+  });
 
-    it('reserves a rocket on clicking the reserve button', async () => {
-        render(<Provider store={store}><Rockets /></Provider>);
-        const reserveBtns = await screen.findAllByText('Reserve Rocket');
-        fireEvent.click(reserveBtns[0]);
-        const reservedBadges = await screen.findAllByText('Reserved');
-        expect(reservedBadges.length).toBeGreaterThan(0);
-      });
+  it('reserves a rocket on clicking the reserve button', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    const reservedBadges = await screen.findAllByText('Reserved');
+    expect(reservedBadges.length).toBeGreaterThan(0);
+  });
 
-      it('cancels a reserved rocket on clicking the cancel reservation button', async () => {
-        render(<Provider store={store}><Rockets /></Provider>);
-        let reserveBtns = await screen.findAllByText('Reserve Rocket');
-        fireEvent.click(reserveBtns[0]);
-        const reservedBadges = await screen.findAllByText('Reserved');
-        expect(reservedBadges.length).toStrictEqual(1);
-        const cancelResBtns = await screen.findAllByText('Cancel Reservation');
-        fireEvent.click(cancelResBtns[0]);
-        reserveBtns = await screen.findAllByText('Reserve Rocket');
-        expect(reserveBtns.length).toStrictEqual(4);
-      });
+  it('cancels a reserved rocket on clicking the cancel reservation button', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    let reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    const reservedBadges = await screen.findAllByText('Reserved');
+    expect(reservedBadges.length).toStrictEqual(1);
+    const cancelResBtns = await screen.findAllByText('Cancel Reservation');
+    fireEvent.click(cancelResBtns[0]);
+    reserveBtns = await screen.findAllByText('Reserve Rocket');
+    expect(reserveBtns.length).toStrictEqual(4);
+  });
 
-      it('renders no reserved rockets on first load of profile', async () => {
-        render(<Provider store={store}><Profile /></Provider>);
-        expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
-      });
+  it('renders no reserved rockets on first load of profile', async () => {
+    render(<Provider store={store}><Profile /></Provider>);
+    expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
+  });
 
-      it('reserves rockets and appear in the profile', async () => {
-        render(<Provider store={store}><Rockets /></Provider>);
-        const reserveBtns = await screen.findAllByText('Reserve Rocket');
-        fireEvent.click(reserveBtns[0]);
-        render(<Provider store={store}><Profile /></Provider>);
-        expect(screen.findByText('Falcon 1')).toBeTruthy();
-      });
+  it('reserves rockets and appear in the profile', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    render(<Provider store={store}><Profile /></Provider>);
+    expect(screen.findByText('Falcon 1')).toBeTruthy();
+  });
 
-      it('reserves rockets that appear in the profile, then cancels and the profile is emptied', async () => {
-        render(<Provider store={store}><Rockets /></Provider>);
-        const reserveBtns = await screen.findAllByText('Reserve Rocket');
-        fireEvent.click(reserveBtns[0]);
-        render(<Provider store={store}><Profile /></Provider>);
-        expect(screen.findByText('Falcon 1')).toBeTruthy();
-    
-        render(<Provider store={store}><Rockets /></Provider>);
-        const cancelResBtns = await screen.findAllByText('Cancel Reservation');
-        fireEvent.click(cancelResBtns[0]);
-        render(<Provider store={store}><Profile /></Provider>);
-        expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
-      });
+  it('reserves rockets that appear in the profile, then cancels and the profile is emptied', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    const reserveBtns = await screen.findAllByText('Reserve Rocket');
+    fireEvent.click(reserveBtns[0]);
+    render(<Provider store={store}><Profile /></Provider>);
+    expect(screen.findByText('Falcon 1')).toBeTruthy();
+
+    render(<Provider store={store}><Rockets /></Provider>);
+    const cancelResBtns = await screen.findAllByText('Cancel Reservation');
+    fireEvent.click(cancelResBtns[0]);
+    render(<Provider store={store}><Profile /></Provider>);
+    expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
+  });
+
+  it('maintains the snapshots between renders', async () => {
+    const tree = render(<Provider store={store}><Rockets /></Provider>);
+    await expect(tree).toMatchSnapshot();
   });
 });
