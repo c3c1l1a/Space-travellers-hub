@@ -1,15 +1,11 @@
 import './profile.css';
 import ReservedRockets from './ReservedRockets/ReservedRockets';
+import ReservedMissions from './ReservedMissions/ReservedMissions';
 
 const Profile = () => (
   <div className="profile">
     <div className="missions">
-      <h2>My missions</h2>
-      <ul className="mission-items">
-        <li>Mission 1</li>
-        <li>Mission 2</li>
-        <li>Mission 3</li>
-      </ul>
+      <ReservedMissions />
     </div>
     <div className="rockets">
       <ReservedRockets />
