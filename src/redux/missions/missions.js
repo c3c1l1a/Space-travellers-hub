@@ -14,14 +14,14 @@ export default function missionsReducer(state = [], action) {
         mission_id: item.mission_id,
         mission_name: item.mission_name,
         description: item.description,
-        reserved: 'false',
+        reserved: false,
       }));
       return stateItems;
     }
     case RESERVE: {
       const newState = state.map((item) => {
         if (item.mission_id === action.missionId) {
-          const reservedCondition = item.reserved === 'true' ? 'false' : 'true';
+          const reservedCondition = !item.reserved;
           const newItem = { ...item, reserved: reservedCondition };
           return newItem;
         }
