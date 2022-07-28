@@ -36,4 +36,20 @@ describe('Rockets Component', () => {
     };
     await axios.get.mockResolvedValue(state);
   });
+
+  afterEach(() => {
+    act(() => store.dispatch({
+      type: 'spacehub/rockets/ADD_ALL_ROCKETS',
+      payload: [],
+    }));
+  });
+
+  it('renders correctly', async () => {
+    render(<Provider store={store}><Rockets /></Provider>);
+    await waitFor(() => {
+      expect(screen.getAllByText('Reserve Rocket').length).toBeGreaterThan(0);
+    });
+  });
+
+
 });
