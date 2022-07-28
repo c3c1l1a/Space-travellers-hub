@@ -74,6 +74,14 @@ describe('Rockets Component', () => {
         render(<Provider store={store}><MyProfile /></Provider>);
         expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
       });
+
+      it('reserves rockets and appear in the profile', async () => {
+        render(<Provider store={store}><Rockets /></Provider>);
+        const reserveBtns = await screen.findAllByText('Reserve Rocket');
+        fireEvent.click(reserveBtns[0]);
+        render(<Provider store={store}><MyProfile /></Provider>);
+        expect(screen.findByText('Falcon 1')).toBeTruthy();
+      });
   });
 
 
