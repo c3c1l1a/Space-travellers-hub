@@ -69,6 +69,11 @@ describe('Rockets Component', () => {
         reserveBtns = await screen.findAllByText('Reserve Rocket');
         expect(reserveBtns.length).toStrictEqual(4);
       });
+
+      it('renders no reserved rockets on first load of profile', async () => {
+        render(<Provider store={store}><MyProfile /></Provider>);
+        expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
+      });
   });
 
 
