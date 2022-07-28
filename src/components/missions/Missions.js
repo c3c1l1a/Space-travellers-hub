@@ -1,15 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import MissionItem from './MissionItem';
 import { fetchAllMissions } from '../../redux/missions/missions';
 import './missions.css';
 
-const Missions = ({ missions }) => {
+const Missions = () => {
   const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions);
 
   useEffect(() => async () => {
-    await dispatch(fetchAllMissions());
+    if (missions.length === 0) await dispatch(fetchAllMissions());
   }, []);
 
   return (
@@ -33,13 +33,4 @@ const Missions = ({ missions }) => {
   );
 };
 
-Missions.defaultProps = {
-  missions: [],
-};
-
-Missions.propTypes = {
-  missions: PropTypes.arrayOf(PropTypes.oneOfType(
-    [PropTypes.object],
-  )),
-};
 export default Missions;
