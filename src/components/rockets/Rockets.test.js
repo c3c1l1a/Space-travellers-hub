@@ -57,6 +57,18 @@ describe('Rockets Component', () => {
         const reservedBadges = await screen.findAllByText('Reserved');
         expect(reservedBadges.length).toBeGreaterThan(0);
       });
+
+      it('cancels a reserved rocket on clicking the cancel reservation button', async () => {
+        render(<Provider store={store}><Rockets /></Provider>);
+        let reserveBtns = await screen.findAllByText('Reserve Rocket');
+        fireEvent.click(reserveBtns[0]);
+        const reservedBadges = await screen.findAllByText('Reserved');
+        expect(reservedBadges.length).toStrictEqual(1);
+        const cancelResBtns = await screen.findAllByText('Cancel Reservation');
+        fireEvent.click(cancelResBtns[0]);
+        reserveBtns = await screen.findAllByText('Reserve Rocket');
+        expect(reserveBtns.length).toStrictEqual(4);
+      });
   });
 
 
