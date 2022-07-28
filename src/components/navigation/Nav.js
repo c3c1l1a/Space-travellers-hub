@@ -16,10 +16,6 @@ const Nav = () => {
       text: 'Rockets',
     },
     {
-      path: 'dragons',
-      text: 'Dragons',
-    },
-    {
       path: 'missions',
       text: 'Missions',
     },
