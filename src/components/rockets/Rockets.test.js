@@ -1,4 +1,10 @@
-
+import {
+    render, screen, waitFor, fireEvent, act,
+  } from '@testing-library/react';
+  import { Provider } from 'react-redux';
+  import Rockets from './Rockets';
+  import MyProfile from '../my-profile/MyProfile';
+  import store from '../../redux/configureStore';
 import axios from '../../http-common';
 
 jest.mock('../../http-common');
@@ -97,6 +103,4 @@ describe('Rockets Component', () => {
         expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
       });
   });
-
-
 });
