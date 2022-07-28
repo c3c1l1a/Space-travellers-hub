@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Nav from './components/navigation/Nav';
 import Profile from './components/profile/Profile';
@@ -8,8 +7,6 @@ import Rockets from './components/rockets/Rockets';
 import './App.css';
 
 function App() {
-  const state = useSelector((state) => state);
-
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate replace to="/rockets" />} />
         <Route path="/rockets" element={<Rockets />} />
-        <Route path="/missions" element={<Missions missions={state.missions} />} />
+        <Route path="/missions" element={<Missions />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
 

@@ -9,7 +9,7 @@ const Missions = () => {
   const missions = useSelector((state) => state.missions);
 
   useEffect(() => async () => {
-    await dispatch(fetchAllMissions());
+    if (missions.length === 0) await dispatch(fetchAllMissions());
   }, []);
 
   return (
