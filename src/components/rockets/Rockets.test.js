@@ -1,10 +1,10 @@
 import {
     render, screen, waitFor, fireEvent, act,
   } from '@testing-library/react';
-  import { Provider } from 'react-redux';
-  import Rockets from './Rockets';
-  import MyProfile from '../my-profile/MyProfile';
-  import store from '../../redux/configureStore';
+import { Provider } from 'react-redux';
+import Rockets from './Rockets';
+import Profile from '../profile/Profile';
+import store from '../../redux/configureStore';
 import axios from '../../http-common';
 
 jest.mock('../../http-common');
@@ -77,7 +77,7 @@ describe('Rockets Component', () => {
       });
 
       it('renders no reserved rockets on first load of profile', async () => {
-        render(<Provider store={store}><MyProfile /></Provider>);
+        render(<Provider store={store}><Profile /></Provider>);
         expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
       });
 
@@ -85,7 +85,7 @@ describe('Rockets Component', () => {
         render(<Provider store={store}><Rockets /></Provider>);
         const reserveBtns = await screen.findAllByText('Reserve Rocket');
         fireEvent.click(reserveBtns[0]);
-        render(<Provider store={store}><MyProfile /></Provider>);
+        render(<Provider store={store}><Profile /></Provider>);
         expect(screen.findByText('Falcon 1')).toBeTruthy();
       });
 
@@ -93,13 +93,13 @@ describe('Rockets Component', () => {
         render(<Provider store={store}><Rockets /></Provider>);
         const reserveBtns = await screen.findAllByText('Reserve Rocket');
         fireEvent.click(reserveBtns[0]);
-        render(<Provider store={store}><MyProfile /></Provider>);
+        render(<Provider store={store}><Profile /></Provider>);
         expect(screen.findByText('Falcon 1')).toBeTruthy();
     
         render(<Provider store={store}><Rockets /></Provider>);
         const cancelResBtns = await screen.findAllByText('Cancel Reservation');
         fireEvent.click(cancelResBtns[0]);
-        render(<Provider store={store}><MyProfile /></Provider>);
+        render(<Provider store={store}><Profile /></Provider>);
         expect(screen.findByText('You have no reserved rockets')).toBeTruthy();
       });
   });
