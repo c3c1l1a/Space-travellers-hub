@@ -12,13 +12,8 @@ const Profile = () => (
       </ul>
     </div>
     <div className="rockets">
-      <h2>My Rockets</h2>
-      <ul className="rocket-items">
-        <li>Rocket 1</li>
-        <li>Rocket 2</li>
-      </ul>
+      <ReservedRockets />
     </div>
-    <ReservedRockets />
   </div>
 );
 

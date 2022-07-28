@@ -7,6 +7,7 @@
 
 .profile h2 {
   font-size: 30px;
+  padding: 20px 0;
 }
 
 .missions,
@@ -17,15 +18,16 @@
 }
 
 .mission-items li,
-.rocket-items li {
+.list li {
   list-style: none;
   border: solid lightgray 1px;
   border-bottom: none;
   padding: 10px;
 }
 
+
 .mission-items li:last-child,
-.rocket-items li:last-child {
+.list li:last-child {
   border-bottom: solid 1px lightgray;
 }
 
